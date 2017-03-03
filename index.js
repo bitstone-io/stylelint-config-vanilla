@@ -1,5 +1,8 @@
 module.exports = {
   extends: "stylelint-config-standard",
+  plugins: [
+    "stylelint-order",
+  ],
   rules: {
     "color-named": "never",
     "font-family-name-quotes": "always-unless-keyword",
@@ -12,7 +15,23 @@ module.exports = {
     "value-no-vendor-prefix": true,
     "property-no-vendor-prefix": true,
     "declaration-no-important": true,
-    "declaration-block-properties-order": [
+    "selector-attribute-quotes": "always",
+    "selector-max-compound-selectors": 3,
+    "selector-no-vendor-prefix": true,
+    "selector-pseudo-class-no-unknown": [true, {
+      ignorePseudoClasses: [
+        "global",
+        "local",
+      ],
+    }],
+    "at-rule-name-newline-after": "always-multi-line",
+    "at-rule-no-unknown": true,
+    "at-rule-no-vendor-prefix": true,
+    "max-line-length": 100,
+    "max-nesting-depth": 3,
+    "no-descending-specificity": true,
+    "no-duplicate-selectors": true,
+    "order/declaration-block-properties-specified-order": [[
       "content",
       "all",
       "position",
@@ -234,22 +253,8 @@ module.exports = {
       "transition-delay",
       "transition-duration",
       "transition-timing-function",
-    ],
-    "selector-attribute-quotes": "always",
-    "selector-max-compound-selectors": 3,
-    "selector-no-vendor-prefix": true,
-    "selector-pseudo-class-no-unknown": [true, {
-      ignorePseudoClasses: [
-        "global",
-        "local",
-      ],
+    ], {
+      unspecified: "bottom",
     }],
-    "at-rule-name-newline-after": "always-multi-line",
-    "at-rule-no-unknown": true,
-    "at-rule-no-vendor-prefix": true,
-    "max-line-length": 100,
-    "max-nesting-depth": 3,
-    "no-descending-specificity": true,
-    "no-duplicate-selectors": true,
   },
 };
